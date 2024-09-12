@@ -1,0 +1,15 @@
+.btn {
+  background-color: var(--color-primary-blue);
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  color: var(--color-pure-white);
+  border: none;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #60abff;
+  }
+}

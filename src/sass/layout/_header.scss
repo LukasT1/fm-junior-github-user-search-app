@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__color-mode {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.6rem;
+    align-items: center;
+
+    * {
+      transition: all 0.2s;
+    }
+  }
+}

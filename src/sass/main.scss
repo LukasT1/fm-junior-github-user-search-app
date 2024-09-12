@@ -2,6 +2,7 @@
 @use '../sass/base/reset';
 @use '../sass/base/normalize';
 @use '../sass/base/typography';
+@use '../sass/base/color-modes';
 
 //Abstracts
 @use '../sass/abstracts/variables';
@@ -11,11 +12,18 @@
 //Components
 @use '../sass/components/buttons';
 @use '../sass/components/forms';
+@use '../sass/components/search-box';
 
 //Layout
-@use "../sass/layout/grid";
+@use '../sass/layout/container';
+@use '../sass/layout/grid';
 @use '../sass/layout/header';
-@use '../sass/base/footer';
+@use '../sass/layout/nav';
+@use '../sass/layout/main';
+
+@use '../sass/layout/footer';
 
 //Pages
 // @use "../sass/pages/"
+
+@use '../sass/abstracts/helper';

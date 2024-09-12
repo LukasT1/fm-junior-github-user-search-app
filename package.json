@@ -1,5 +1,5 @@
 {
-  "name": "GitHub user search app",
+  "name": "github_user_search_app",
   "version": "1.0.0",
   "description": "Solution for Frontend Mentor challenge GitHub user search app",
   "main": "src/index.html",

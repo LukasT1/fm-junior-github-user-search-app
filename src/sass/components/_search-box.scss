@@ -1,0 +1,27 @@
+.search-box {
+  border-radius: 1.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  align-items: center;
+  column-gap: 1.6rem;
+}
+
+.input {
+  height: 100%;
+  width: 85%;
+  border: none;
+  font-size: 1.8rem;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: normal;
+  }
+}

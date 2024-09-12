@@ -1,83 +1,43 @@
-@use 'variables';
-
 body {
-  font-family: 'Inter', sans-serif;
-  color: var(--gunnmetal);
+  font-family: 'Space Mono', monospace;
 }
 
 h1,
+.h1 {
+  font-size: 2.6rem;
+  line-height: 3.8rem;
+  font-weight: bold;
+}
+
 h2,
+.h2 {
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  font-weight: bold;
+}
+
 h3,
+.h3 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: normal;
+  color: var(--color-primary-blue);
+}
+
 h4,
-h5 {
-  line-height: 110%;
-  font-weight: 600;
+.h4 {
+  font-size: 1.3rem;
+  line-height: 1rem;
+  font-weight: normal;
 }
 
-p {
-  line-height: 150%;
-  font-weight: 400;
-}
-
-.heading-xl {
-  font-size: 6.4rem;
-  font-weight: 600;
-}
-
-.heading-l {
-  font-size: 4.8rem;
-  font-weight: 600;
-}
-
-.heading-m {
-  font-size: 2.4rem;
-  font-weight: 600;
-}
-
-.heading-s {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.body-m {
-  font-size: 1.6rem;
-  @media (max-width: variables.$bp-tablet) {
-    font-size: 1.8rem;
-  }
-}
-
-.body-m--bold {
-  font-size: 1.6rem;
-  font-weight: 600;
-  @media (max-width: variables.$bp-tablet) {
-    font-size: 1.8rem;
-  }
-}
-
-.body-s {
-  font-size: 1.4rem;
-
-  @media (max-width: variables.$bp-tablet) {
-    font-size: 1.6rem;
-  }
-}
-
-.white {
-  color: var(--white);
-}
-
-.blue {
-  color: var(--blue);
-}
-
-.dark-blue {
-  color: var(--dark-blue);
-}
-
-.gunmetal {
-  color: var(--gunnmetal);
+p,
+.p {
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 2.5rem;
 }
 
 .bold {
-  font-weight: 600;
+  font-weight: bold;
 }
