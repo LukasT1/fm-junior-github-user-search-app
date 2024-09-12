@@ -1,3 +1,5 @@
+@use '../abstracts/variables';
+
 .main {
   border-radius: 1.5rem;
   padding: 4rem 5rem;
@@ -44,6 +46,7 @@
 
   &__socials {
     padding: 2rem 3rem;
+    padding-left: 0;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     column-gap: 2rem;
@@ -55,6 +58,42 @@
       flex-direction: row;
       column-gap: 1.6rem;
       align-items: center;
+    }
+  }
+}
+
+@media (max-width: variables.$bp-tablet) {
+  .main {
+    padding: 2.5rem;
+    &__image {
+      grid-row: 1 / 2;
+
+      width: 75%;
+    }
+
+    &__info {
+      grid-column: 2 / -1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__bio,
+    &__stats,
+    &__socials {
+      grid-column: 1 / -1;
+    }
+
+    &__socials {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: variables.$bp-tablet) {
+  .main {
+    &__socials {
+      display: flex;
+      flex-flow: column nowrap;
     }
   }
 }

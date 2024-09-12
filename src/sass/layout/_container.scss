@@ -1,6 +1,24 @@
+@use '../abstracts/variables';
+
 .container {
   margin: 0 auto;
   display: grid;
+  grid-template-columns: auto;
   place-content: center;
-  margin: 0 20%;
+  height: 100vh;
+  padding: 0 5rem;
+  max-width: 108rem;
+}
+
+@media (max-width: variables.$bp-tablet) {
+  .container {
+    padding: 0 3rem;
+    place-content: start center;
+  }
+}
+
+@media (max-width: variables.$bp-mobile) {
+  .container {
+    padding: 0 2rem;
+  }
 }
