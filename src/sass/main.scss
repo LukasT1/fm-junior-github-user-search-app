@@ -1,0 +1,21 @@
+//Base
+@use '../sass/base/reset';
+@use '../sass/base/normalize';
+@use '../sass/base/typography';
+
+//Abstracts
+@use '../sass/abstracts/variables';
+@use '../sass/abstracts/mixins';
+@use '../sass/abstracts/animations';
+
+//Components
+@use '../sass/components/buttons';
+@use '../sass/components/forms';
+
+//Layout
+@use "../sass/layout/grid";
+@use '../sass/layout/header';
+@use '../sass/base/footer';
+
+//Pages
+// @use "../sass/pages/"
