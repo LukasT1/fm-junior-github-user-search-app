@@ -1,11 +1,30 @@
+@use '../abstracts/variables';
 .search-box {
-  border-radius: 1.5rem;
+  position: relative;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 2rem 3rem;
   align-items: center;
   column-gap: 1.6rem;
+
+  &-error {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #f74646;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: all 0.3s;
+
+    &--visible {
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+  }
 }
 
 .input {
@@ -23,5 +42,33 @@
     font-family: inherit;
     font-size: 1.8rem;
     font-weight: normal;
+  }
+}
+
+@media (max-width: variables.$bp-tablet) {
+  .search-box {
+    padding: 1rem 1.5rem;
+
+    &-error {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      font-size: 1.25rem;
+      transform: translate(50%, 500%);
+      color: #f74646;
+      opacity: 0;
+      transition: all 0.3s;
+
+      &--visible {
+        opacity: 1;
+        transform: translate(50%, 200%);
+      }
+    }
+  }
+  .input {
+    &::placeholder {
+      font-size: 1.2rem;
+      font-stretch: extra-condensed;
+    }
   }
 }

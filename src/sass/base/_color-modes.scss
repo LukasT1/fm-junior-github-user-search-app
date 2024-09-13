@@ -1,4 +1,5 @@
 .light-mode {
+  transition: all 0.2s ease-in;
   background-color: var(--color-soft-white-light);
   h1,
   .h1,
@@ -16,7 +17,7 @@
     background-color: var(--color-pure-white);
   }
 
-  .header__color-mode--light {
+  .header__color-mode--dark {
     * {
       color: var(--color-slate-grey-light);
       fill: var(--color-slate-grey-light);
@@ -41,10 +42,34 @@
     &__stats {
       background-color: var(--color-soft-white-light);
     }
+
+    &__socials {
+      svg {
+        fill: var(--color-steel-blue-light);
+      }
+    }
+  }
+  a,
+  a:visited {
+    color: var(--color-steel-blue-light);
+  }
+  .disabled {
+    a,
+    a:visited,
+    a:active {
+      pointer-events: none;
+      color: rgba($color: #4b6a9b, $alpha: 0.5);
+    }
+
+    svg,
+    path {
+      fill: rgba($color: #4b6a9b, $alpha: 0.5);
+    }
   }
 }
 
 .dark-mode {
+  transition: all 0.2s ease-in;
   background-color: var(--color-slate-black-dark);
 
   h1,
@@ -61,7 +86,7 @@
     background-color: var(--color-dark-navy-dark);
   }
 
-  .header__color-mode {
+  .header__color-mode--ligh {
     * {
       color: var(--color-pure-white);
       fill: var(--color-pure-white);
@@ -85,6 +110,29 @@
   .main {
     &__stats {
       background-color: var(--color-slate-black-dark);
+    }
+    &__socials {
+      svg {
+        fill: var(--color-pure-white);
+      }
+    }
+  }
+  a,
+  a:visited {
+    color: var(--color-pure-white);
+  }
+
+  .disabled {
+    a,
+    a:visited,
+    a:active {
+      pointer-events: none;
+      color: rgba($color: #fff, $alpha: 0.5);
+    }
+
+    svg,
+    path {
+      fill: rgba($color: #fff, $alpha: 0.5);
     }
   }
 }

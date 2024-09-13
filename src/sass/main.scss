@@ -2,7 +2,6 @@
 @use '../sass/base/reset';
 @use '../sass/base/normalize';
 @use '../sass/base/typography';
-@use '../sass/base/color-modes';
 
 //Abstracts
 @use '../sass/abstracts/variables';
@@ -26,4 +25,5 @@
 //Pages
 // @use "../sass/pages/"
 
+@use '../sass/base/color-modes';
 @use '../sass/abstracts/helper';

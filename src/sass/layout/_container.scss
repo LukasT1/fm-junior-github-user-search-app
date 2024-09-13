@@ -19,6 +19,19 @@
 
 @media (max-width: variables.$bp-mobile) {
   .container {
-    padding: 0 2rem;
+    padding: 0 1rem;
+  }
+}
+
+a,
+a:visited {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 2.5rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

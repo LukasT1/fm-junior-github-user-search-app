@@ -6,6 +6,17 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 3rem;
+  opacity: 0;
+  // transform: translateY(-100%);
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+    // transform: translateY(0%);
+  }
 
   &__image {
     grid-column: 1 / 2;
@@ -13,6 +24,7 @@
     justify-self: start;
     align-self: start;
     width: 80%;
+    border-radius: 50%;
   }
 
   &__info,
@@ -46,7 +58,7 @@
 
   &__socials {
     padding: 2rem 0;
-    padding-right: 25%;
+    padding-right: 10%;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     column-gap: 2rem;
