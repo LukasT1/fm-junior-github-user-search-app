@@ -1,3 +1,23 @@
 .hidden {
   display: none;
 }
+
+.loader {
+  border-radius: 50%;
+  border: 0.6rem solid var(--color-steel-blue-light);
+  border-top: 0.6rem solid var(--color-soft-white-light);
+  width: 4rem;
+  height: 4rem;
+  animation: spin 1.5s ease-in-out infinite;
+  display: none;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

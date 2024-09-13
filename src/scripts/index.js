@@ -7,6 +7,14 @@ const body = document.querySelector('body')
 const colorMode = document.querySelectorAll('.header__color-mode')
 const iconLight = document.querySelector('.header__color-mode--light')
 const iconDark = document.querySelector('.header__color-mode--dark')
+const loader = document.querySelector('.loader')
+
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark')
+
+if (prefersDark.matches && !body.classList.contains('dark-mode')) {
+  toggleColorMode()
+} else {
+}
 
 function toggleColorMode() {
   body.classList.contains('light-mode') ?
@@ -18,15 +26,18 @@ function toggleColorMode() {
 
 async function getData(url) {
   try {
+    loader.style.display = 'block'
     const response = await fetch(url)
     if (!response.ok) {
       throw new Error('Error fetching the data')
     }
     const data = await response.json()
+
     return data
   } catch (error) {
     console.error('The task failed succesfully')
     errorMsg.classList.add('search-box-error--visible')
+    loader.style.display = 'none'
   }
 }
 
@@ -35,29 +46,40 @@ async function handleDataFetch() {
   const data = await getData(url)
   if (data) {
     renderData(data)
+    loader.style.display = 'none'
     console.log(data)
   }
 }
 
-function debounce(func, wait = 300) {
-  let timeout
-  return function (...args) {
-    const later = () => {
-      clearTimeout(timeout)
-      func.apply(this, args)
-    }
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
-  }
-}
+// function debounce(func, wait = 300) {
+//   let timeout
+//   return function (...args) {
+//     const later = () => {
+//       clearTimeout(timeout)
+//       func.apply(this, args)
+//     }
+//     clearTimeout(timeout)
+//     timeout = setTimeout(later, wait)
+//   }
+// }
 
 function renderData(data) {
   errorMsg.classList.remove('search-box-error--visible')
+  const date = new Date(data.created_at)
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
+  const formattedDate = new Intl.DateTimeFormat('en-US', options).format(
+    date,
+  )
+
   main.innerHTML = `<img class="main__image" src="${data.avatar_url}" alt="${data.name} avatar picture" />
     <div class="main__info">
       <div class="main__info-username h1">${data.name}</div>
       <div class="main__info-user-handle h3">@${data.login}</div>
-      <div class="main__info-joined slate-grey p">Joined</div>
+      <div class="main__info-joined slate-grey p">Joined ${formattedDate}</div>
     </div>
     <div class="main__bio">
       <p class="main__bio-text">
@@ -127,7 +149,7 @@ function renderData(data) {
     </div>`
   main.classList.add('main--visible')
 }
-const debouncedHandleChange = debounce(handleChange, 400)
+// const debouncedHandleChange = debounce(handleChange, 400)
 
 function handleChange() {
   main.classList.remove('main--visible')
