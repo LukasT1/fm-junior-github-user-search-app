@@ -45,13 +45,13 @@
   }
 
   &__socials {
-    padding: 2rem 3rem;
-    padding-left: 0;
+    padding: 2rem 0;
+    padding-right: 25%;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     column-gap: 2rem;
     row-gap: 1.6rem;
-    column-gap: 1.6rem;
+    justify-content: space-between;
 
     * {
       display: flex;
